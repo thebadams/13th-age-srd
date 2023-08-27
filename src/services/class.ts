@@ -4,7 +4,9 @@ export async function findAllClasses() {
 	try {
 		const classes = await prisma.class.findMany({select: {
 			name: true,
-			abilBonus: true
+			abilBonus: true,
+			baseHP: true,
+			recoveryDice: true
 		}})
 		return {
 			data: classes,
