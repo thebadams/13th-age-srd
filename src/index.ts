@@ -1,14 +1,7 @@
 import Fastify from 'fastify';
 
-const server = Fastify({ logger: true });
+import { createServer } from './config/server.js';
 
-server.get('/', (_request, _reply) => {
-	return "Hello World"
-})
+const {server, start, port} = createServer()
 
-try {
-	await server.listen({port: 8000});
-} catch (e) {	
-	console.error(e)
-	process.exit(2)
-}
+start(server, port)
