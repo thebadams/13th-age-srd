@@ -1,7 +1,6 @@
-import Fastify from 'fastify';
+import { ServerConfig } from './config/server.js';
+import { createServer } from './server.js';
 
-import { createServer } from './config/server.js';
-
-const {server, start, port} = createServer()
+const {server, start, port} = createServer(ServerConfig)
 
 start(server, port)

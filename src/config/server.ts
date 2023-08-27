@@ -1,22 +1,7 @@
-import Fastify, { FastifyInstance } from 'fastify';
+export type ServerConfig = {
+	port: number;
+}
 
-
-
-export function createServer() {
-	const PORT = 8000;
-	const server = Fastify({ logger: true });
-	server.get('/', (_req, _reply) => {
-		return {
-			message: "Hello World"
-		}
-	})
-	const start = async (server: FastifyInstance, port: number) => {
-		try {
-			void await server.listen({port});
-		} catch (error) {
-			console.error(error)
-			process.exit(2)
-		}
-	};
-	return {server, start, port: PORT}
+export const ServerConfig =  {
+	port: 8000
 }
