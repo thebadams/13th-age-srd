@@ -14,6 +14,7 @@ async function getClasses() {
 async function seedClasses() {
 	const classData = await getClasses()
 	try {
+		void await prisma.class.deleteMany({})
 		const classes = await prisma.class.createMany({data: classData})
 		console.log(classes)
 	} catch (error) {

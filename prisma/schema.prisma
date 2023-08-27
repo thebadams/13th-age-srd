@@ -10,7 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Ability {
+	Strength
+	Dexterity
+	Constitution
+	Intelligence
+	Wisdom
+	Charisma
+}
+
 model Class {
 	id Int @id() @default(autoincrement())
 	name String @unique()
+	abilBonus Ability[]
 }

@@ -3,7 +3,8 @@ import {prisma} from '../config/prisma.js'
 export async function findAllClasses() {
 	try {
 		const classes = await prisma.class.findMany({select: {
-			name: true
+			name: true,
+			abilBonus: true
 		}})
 		return {
 			data: classes,
