@@ -1,6 +1,6 @@
 import { ServerConfig } from './config/server.js';
 import { createServer } from './server.js';
 
-const {server, start, port} = createServer(ServerConfig)
+const {server, start, port} = await createServer(ServerConfig)
 
-start(server, port)
+void await start(server, port)

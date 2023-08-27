@@ -1,8 +1,9 @@
 import Fastify, { FastifyInstance } from 'fastify';
 import type { ServerConfig } from './config/server.js';
+import { registerClassRoutes } from './routes/class.js';
 
 
-export function createServer(config: ServerConfig) {
+export async function createServer(config: ServerConfig) {
 	const PORT = config.port;
 	const server = Fastify({ logger: true });
 	server.get('/', (_req, _reply) => {
@@ -10,6 +11,8 @@ export function createServer(config: ServerConfig) {
 			message: "Hello World"
 		}
 	})
+	
+	void await registerClassRoutes(server)
 	const start = async (server: FastifyInstance, port: number) => {
 		try {
 			void await server.listen({port});
