@@ -6,7 +6,13 @@ export async function findAllClasses() {
 			name: true,
 			abilBonus: true,
 			baseHP: true,
-			recoveryDice: true
+			recoveryDice: true,
+			startingGold: true,
+			noArmor: true,
+			lightArmor: true,
+			heavyArmor: true,
+			shield: true,
+			basicMeleeAttack: true
 		}})
 		return {
 			data: classes,

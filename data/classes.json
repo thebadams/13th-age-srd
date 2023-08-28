@@ -1,18 +1,469 @@
 [
-	{"name": "Barbarian", "abilBonus": ["Strength", "Constitution"], "baseHP": 7, "recoveryDice": "d10"},
-	{"name": "Bard", "abilBonus": ["Dexterity", "Charisma"], "baseHP": 7, "recoveryDice": "d8"},
-	{"name": "Chaos Mage", "abilBonus": ["Intelligence", "Charisma"], "baseHP": 6, "recoveryDice": "d6"},
-	{"name": "Cleric", "abilBonus": ["Wisdom", "Strength"], "baseHP": 7, "recoveryDice": "d8"},
-	{"name": "Commander", "abilBonus": ["Strength", "Charisma"], "baseHP": 7, "recoveryDice": "d8"},
-	{"name": "Demonologist", "abilBonus": ["Constitution", "Charisma"], "baseHP": 6, "recoveryDice": "d6"},
-	{"name": "Druid", "abilBonus": ["Strength", "Dexterity", "Wisdom"], "baseHP": 6, "recoveryDice": "d6"},
-	{"name": "Fighter", "abilBonus": ["Strength", "Constitution"], "baseHP": 8, "recoveryDice": "d10"},
-	{"name": "Monk", "abilBonus": ["Strength","Dexterity", "Wisdom"], "baseHP": 7, "recoveryDice": "d8"},
-	{"name": "Necromancer", "abilBonus": ["Intelligence", "Charisma"], "baseHP": 6, "recoveryDice": "d6"},
-	{"name": "Occultist", "abilBonus": ["Intelligence", "Wisdom"], "baseHP": 6, "recoveryDice": "d6"},
-	{"name": "Paladin", "abilBonus": ["Strength", "Charisma"], "baseHP": 8, "recoveryDice": "d10"},
-	{"name": "Ranger", "abilBonus": ["Strength", "Dexterity"], "baseHP": 7, "recoveryDice": "d8"},
-	{"name": "Rogue", "abilBonus": ["Dexterity", "Charisma"], "baseHP": 6, "recoveryDice": "d8"},
-	{"name": "Sorcerer", "abilBonus": ["Charisma", "Constitution"], "baseHP": 6, "recoveryDice": "d6"},
-	{"name": "Wizard", "abilBonus": ["Intelligence", "Wisdom"], "baseHP": 6, "recoveryDice": "d6"}
+  {
+    "name": "Barbarian",
+    "abilBonus": ["Strength", "Constitution"],
+    "baseHP": 7,
+    "recoveryDice": "d10",
+    "startingGold": "Barbarians may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 12,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 13,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": 0
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength + Level vs AC",
+      "hit": "WEAPON + Strength damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Bard",
+    "abilBonus": ["Dexterity", "Charisma"],
+    "baseHP": 7,
+    "recoveryDice": "d8",
+    "startingGold": "Bards may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 12,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 13,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength OR Dexterity + Level vs AC",
+      "hit": "WEAPON + Strength OR Dexterity damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Chaos Mage",
+    "abilBonus": ["Intelligence", "Charisma"],
+    "baseHP": 6,
+    "recoveryDice": "d6",
+    "startingGold": "Chaos Mages may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 11,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength + Level vs AC",
+      "hit": "WEAPON + Strength damage",
+      "miss": "-"
+    }
+  },
+  {
+    "name": "Cleric",
+    "abilBonus": ["Wisdom", "Strength"],
+    "baseHP": 7,
+    "recoveryDice": "d8",
+    "startingGold": "Clerics may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 12,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 14,
+      "attackPenalty": 0
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": 0
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength + Level vs AC",
+      "hit": "WEAPON + Strength damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Commander",
+    "abilBonus": ["Strength", "Charisma"],
+    "baseHP": 7,
+    "recoveryDice": "d8",
+    "startingGold": "Commanders may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 12,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 14,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": 0
+    },
+    "basicMeleeAttack": {
+      "target": "-",
+      "attack": "-",
+      "hit": "-",
+      "miss": "-"
+    }
+  },
+  {
+    "name": "Demonologist",
+    "abilBonus": ["Constitution", "Charisma"],
+    "baseHP": 6,
+    "recoveryDice": "d6",
+    "startingGold": "Demonologists may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 11,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 12,
+      "attackPenalty": -5
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength + Level vs AC",
+      "hit": "WEAPON + Strength damage",
+      "miss": "-"
+    }
+  },
+  {
+    "name": "Druid",
+    "abilBonus": ["Strength", "Dexterity", "Wisdom"],
+    "baseHP": 6,
+    "recoveryDice": "d6",
+    "startingGold": "Druids may start with either 25gp or 1d6 x 10",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 14,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength OR Dexterity + Level vs AC",
+      "hit": "WEAPON + Strength OR Dexterity damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Fighter",
+    "abilBonus": ["Strength", "Constitution"],
+    "baseHP": 8,
+    "recoveryDice": "d10",
+    "startingGold": "Fighters may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 13,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 15,
+      "attackPenalty": 0
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": 0
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength + Level vs AC",
+      "hit": "WEAPON + Strength damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Monk",
+    "abilBonus": ["Strength", "Dexterity", "Wisdom"],
+    "baseHP": 7,
+    "recoveryDice": "d8",
+    "startingGold": "Monks may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 11,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 11,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 12,
+      "attackPenalty": -4
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Dexterity + Level vs AC",
+      "hit": "PUNCH + Dexterity damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Necromancer",
+    "abilBonus": ["Intelligence", "Charisma"],
+    "baseHP": 6,
+    "recoveryDice": "d6",
+    "startingGold": "Necromancers may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 11,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength + Level vs AC",
+      "hit": "WEAPON + Strength damage",
+      "miss": "-"
+    }
+  },
+  {
+    "name": "Occultist",
+    "abilBonus": ["Intelligence", "Wisdom"],
+    "baseHP": 6,
+    "recoveryDice": "d6",
+    "startingGold": "Occultists may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 11,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 13,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength + Level vs AC",
+      "hit": "WEAPON + Strength damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Paladin",
+    "abilBonus": ["Strength", "Charisma"],
+    "baseHP": 8,
+    "recoveryDice": "d10",
+    "startingGold": "Paladins may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 12,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 16,
+      "attackPenalty": 0
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": 0
+    },
+
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength + Level vs AC",
+      "hit": "WEAPON + Strength damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Ranger",
+    "abilBonus": ["Strength", "Dexterity"],
+    "baseHP": 7,
+    "recoveryDice": "d8",
+    "startingGold": "Rangers may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 14,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 15,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength OR Dexterity + Level vs AC",
+      "hit": "WEAPON + Strength OR Dexterity damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Rogue",
+    "abilBonus": ["Dexterity", "Charisma"],
+    "baseHP": 6,
+    "recoveryDice": "d8",
+    "startingGold": "Rogues may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 11,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 12,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 13,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Dexterity + Level vs AC",
+      "hit": "WEAPON + Dexterity damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Sorcerer",
+    "abilBonus": ["Charisma", "Constitution"],
+    "baseHP": 6,
+    "recoveryDice": "d6",
+    "startingGold": "Sorcerers may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 11,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength + Level vs AC",
+      "hit": "WEAPON + Strength damage",
+      "miss": "Damage equal to your Level"
+    }
+  },
+  {
+    "name": "Wizard",
+    "abilBonus": ["Intelligence", "Wisdom"],
+    "baseHP": 6,
+    "recoveryDice": "d6",
+    "startingGold": "Wizards may start with either 25gp or 1d6 x 10 gp",
+    "noArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "lightArmor": {
+      "baseAC": 10,
+      "attackPenalty": 0
+    },
+    "heavyArmor": {
+      "baseAC": 11,
+      "attackPenalty": -2
+    },
+    "shield": {
+      "baseAC": 1,
+      "attackPenalty": -2
+    },
+    "basicMeleeAttack": {
+      "target": "One enemy",
+      "attack": "Strength + Level vs AC",
+      "hit": "WEAPON + Strength damage",
+      "miss": "-"
+    }
+  }
 ]

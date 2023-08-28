@@ -11,28 +11,33 @@ datasource db {
 }
 
 enum Ability {
-	Strength
-	Dexterity
-	Constitution
-	Intelligence
-	Wisdom
-	Charisma
+  Strength
+  Dexterity
+  Constitution
+  Intelligence
+  Wisdom
+  Charisma
 }
 
 model Class {
-	id Int @id() @default(autoincrement())
-	name String @unique()
-	abilBonus Ability[]
-	baseHP Int
-	recoveryDice Dice
-
+  id               Int       @id() @default(autoincrement())
+  name             String    @unique()
+  abilBonus        Ability[]
+  baseHP           Int
+  recoveryDice     Dice
+  startingGold     String
+  noArmor          Json
+  lightArmor       Json
+  heavyArmor       Json
+  shield           Json
+  basicMeleeAttack Json
 }
 
 enum Dice {
-	d4
-	d6
-	d8
-	d10
-	d12
-	d20
+  d4
+  d6
+  d8
+  d10
+  d12
+  d20
 }
