@@ -20,17 +20,18 @@ enum Ability {
 }
 
 model Class {
-  id               Int       @id() @default(autoincrement())
-  name             String    @unique()
-  abilBonus        Ability[]
-  baseHP           Int
-  recoveryDice     Dice
-  startingGold     String
-  noArmor          Json
-  lightArmor       Json
-  heavyArmor       Json
-  shield           Json
-  basicMeleeAttack Json
+  id                Int       @id() @default(autoincrement())
+  name              String    @unique()
+  abilBonus         Ability[]
+  baseHP            Int
+  recoveryDice      Dice
+  startingGold      String
+  noArmor           Json
+  lightArmor        Json
+  heavyArmor        Json
+  shield            Json
+  basicMeleeAttack  Json
+  basicRangedAttack Json
 }
 
 enum Dice {

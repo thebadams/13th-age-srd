@@ -1,0 +1,110 @@
+{
+	"$schema": "http://json-schema.org/schema",
+	"type": "object",
+	"properties": {
+		"classes": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"abilBonus": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"baseHP": {
+						"type": "number"
+					},
+					"recoveryDice": {
+						"type": "string"
+					},
+					"startingGold": {
+						"type": "string"
+					},
+					"noArmor": {
+						"type": "object",
+						"properties": {
+							"baseAC": {
+								"type": "number"
+							},
+							"attackPenalty": {
+								"type": "number"
+							}
+						}
+					},
+					"lightArmor": {
+						"type": "object",
+						"properties": {
+							"baseAC": {
+								"type": "number"
+							},
+							"attackPenalty": {
+								"type": "number"
+							}
+						}
+					},
+					"heavyArmor": {
+						"type": "object",
+						"properties": {
+							"baseAC": {
+								"type": "number"
+							},
+							"attackPenalty": {
+								"type": "number"
+							}
+						}
+					},
+					"shield": {
+						"type": "object",
+						"properties": {
+							"baseAC": {
+								"type": "number"
+							},
+							"attackPenalty": {
+								"type": "number"
+							}
+						}
+					},
+					"basicMeleeAttack": {
+						"type": "object",
+						"properties": {
+							"target": {
+								"type": "string"
+							},
+							"attack": {
+								"type": "string"
+							},
+							"hit": {
+								"type": "string"
+							},
+							"miss": {
+								"type": "string"
+							}
+						}
+					},
+					"basicRangedAttack": {
+						"type": "object",
+						"properties": {
+							"target": {
+								"type": "string"
+							},
+							"attack": {
+								"type": "string"
+							},
+							"hit": {
+								"type": "string"
+							},
+							"miss": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
