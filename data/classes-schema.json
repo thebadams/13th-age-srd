@@ -8,69 +8,97 @@
 				"type": "object",
 				"properties": {
 					"name": {
-						"type": "string"
+						"type": "string",
+						"description": "The name of the class."
 					},
 					"abilBonus": {
 						"type": "array",
+						"description": "The list of available ability bonuses for the class.",
 						"items": {
-							"type": "string"
+							"type": "string",
+							"enum": [
+								"Strength",
+								"Dexterity",
+								"Constitution",
+								"Intelligence",
+								"Wisdom",
+								"Charisma"
+							]
 						}
 					},
 					"baseHP": {
-						"type": "number"
+						"type": "number",
+						"description": "The base HP of the class. Used in calculation of HP at each level"
 					},
 					"recoveryDice": {
-						"type": "string"
+						"type": "string",
+						"description": "The die that is rolled for recovery"
 					},
 					"startingGold": {
-						"type": "string"
+						"type": "string",
+						"description": "The amount of gold that the class starts with"
 					},
 					"noArmor": {
 						"type": "object",
+						"description": "The AC configuration for a member of the class while wearing no armor",
 						"properties": {
 							"baseAC": {
-								"type": "number"
+								"type": "number",
+								"description": "The base AC value for when the character has no armor"
 							},
 							"attackPenalty": {
-								"type": "number"
+								"type": "number",
+								"description": "The attack penalty value for when the character has no armor"
 							}
 						}
 					},
 					"lightArmor": {
 						"type": "object",
+						"description": "The AC configuration for a member of the class while wearing a light armor",
 						"properties": {
 							"baseAC": {
-								"type": "number"
+								"type": "number",
+								"description": "The base AC value for when the character has a light armor"
 							},
 							"attackPenalty": {
-								"type": "number"
+								"type": "number",
+								"description": "The attack penalty value for when the character has a light armor"
 							}
 						}
 					},
 					"heavyArmor": {
 						"type": "object",
+						"description": "The AC configuration for a member of the class while wearing a heavy armor",
 						"properties": {
 							"baseAC": {
-								"type": "number"
+								"type": "number",
+								"description": "The base AC value for when the character has  heavy armor"
 							},
 							"attackPenalty": {
-								"type": "number"
+								"type": "number",
+								"description": "The attack penalty value for when the character has  heavy armor"
 							}
 						}
 					},
 					"shield": {
 						"type": "object",
+						"description": "The AC configuration for a member of the class while using a shield",
+						"$comment": "There are only two configurations available: one with penalty and one without. A shield always grants a +1 bonus",
 						"properties": {
 							"baseAC": {
-								"type": "number"
+								"type": "number",
+								"description": "The AC value granted by use of a shield. This is always 1",
+								"enum": [1]
 							},
 							"attackPenalty": {
-								"type": "number"
+								"type": "number",
+								"description": "The attack penalty value for a character that is using a shield."
 							}
 						}
 					},
 					"basicMeleeAttack": {
 						"type": "object",
+						"description": "The attack configuration for a class's basic melee attacks",
 						"properties": {
 							"target": {
 								"type": "string"
@@ -88,6 +116,7 @@
 					},
 					"basicRangedAttack": {
 						"type": "object",
+						"description": "The attack configuration for a class's basic ranged attacks",
 						"properties": {
 							"target": {
 								"type": "string"
