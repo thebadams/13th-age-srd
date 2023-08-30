@@ -1,27 +1,30 @@
-import {prisma} from '../config/prisma.js'
+import { prisma } from '../config/prisma.js';
 
-export async function findAllClasses() {
+export type classFieldFilter = {
+	name?: boolean;
+	abilBonus?: boolean;
+	baseHP?: boolean;
+	recoveryDice?: boolean;
+	startingGold?: boolean;
+	noArmor?: boolean;
+	lightArmor?: boolean;
+	heavyArmor?: boolean;
+	shield?: boolean;
+	basicMeleeAttack?: boolean;
+	basicRangedAttack?: boolean;
+};
+
+export async function findAllClasses(filter: classFieldFilter) {
 	try {
-		const classes = await prisma.class.findMany({select: {
-			name: true,
-			abilBonus: true,
-			baseHP: true,
-			recoveryDice: true,
-			startingGold: true,
-			noArmor: true,
-			lightArmor: true,
-			heavyArmor: true,
-			shield: true,
-			basicMeleeAttack: true
-		}})
+		const classes = await prisma.class.findMany({ select: filter });
 		return {
 			data: classes,
-			error: null
-		}
+			error: null,
+		};
 	} catch (error) {
 		return {
 			data: null,
-      error: error
-		}
+			error: error,
+		};
 	}
 }
