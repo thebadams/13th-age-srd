@@ -1,0 +1,182 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "Class": {
+      "name": "Class",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "abilBonus": {
+          "name": "abilBonus",
+          "type": "Ability\"[]",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "baseHP": {
+          "name": "baseHP",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "recoveryDice": {
+          "name": "recoveryDice",
+          "type": "Dice",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "startingGold": {
+          "name": "startingGold",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "noArmor": {
+          "name": "noArmor",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lightArmor": {
+          "name": "lightArmor",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "heavyArmor": {
+          "name": "heavyArmor",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "shield": {
+          "name": "shield",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "basicMeleeAttack": {
+          "name": "basicMeleeAttack",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "basicRangedAttack": {
+          "name": "basicRangedAttack",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "Class_name_key": {
+          "name": "Class_name_key",
+          "columns": [
+            "name"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {
+    "key_status": {
+      "name": "key_status",
+      "values": {
+        "default": "default",
+        "valid": "valid",
+        "invalid": "invalid",
+        "expired": "expired"
+      }
+    },
+    "key_type": {
+      "name": "key_type",
+      "values": {
+        "aead-ietf": "aead-ietf",
+        "aead-det": "aead-det",
+        "hmacsha512": "hmacsha512",
+        "hmacsha256": "hmacsha256",
+        "auth": "auth",
+        "shorthash": "shorthash",
+        "generichash": "generichash",
+        "kdf": "kdf",
+        "secretbox": "secretbox",
+        "secretstream": "secretstream",
+        "stream_xchacha20": "stream_xchacha20"
+      }
+    },
+    "factor_type": {
+      "name": "factor_type",
+      "values": {
+        "totp": "totp",
+        "webauthn": "webauthn"
+      }
+    },
+    "factor_status": {
+      "name": "factor_status",
+      "values": {
+        "unverified": "unverified",
+        "verified": "verified"
+      }
+    },
+    "aal_level": {
+      "name": "aal_level",
+      "values": {
+        "aal1": "aal1",
+        "aal2": "aal2",
+        "aal3": "aal3"
+      }
+    },
+    "code_challenge_method": {
+      "name": "code_challenge_method",
+      "values": {
+        "s256": "s256",
+        "plain": "plain"
+      }
+    },
+    "Ability": {
+      "name": "Ability",
+      "values": {
+        "Strength": "Strength",
+        "Dexterity": "Dexterity",
+        "Constitution": "Constitution",
+        "Intelligence": "Intelligence",
+        "Wisdom": "Wisdom",
+        "Charisma": "Charisma"
+      }
+    },
+    "Dice": {
+      "name": "Dice",
+      "values": {
+        "d4": "d4",
+        "d6": "d6",
+        "d8": "d8",
+        "d10": "d10",
+        "d12": "d12",
+        "d20": "d20"
+      }
+    }
+  },
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
