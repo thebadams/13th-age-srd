@@ -6,10 +6,7 @@ import {
   text,
   integer,
   jsonb,
-  PgArray,
 } from "drizzle-orm/pg-core";
-
-import { sql } from "drizzle-orm";
 export const keyStatus = pgEnum("key_status", [
   "default",
   "valid",
