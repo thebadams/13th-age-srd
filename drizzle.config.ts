@@ -3,7 +3,7 @@ import { config } from "dotenv";
 
 config();
 export default {
-  schema: "./src/schema.ts",
+  schema: "./src/db/*",
   out: "./drizzle",
   driver: "pg",
   dbCredentials: {

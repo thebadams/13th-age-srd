@@ -26,7 +26,7 @@
               ]
             }
           },
-          "baseHP": {
+          "baseHp": {
             "type": "number",
             "description": "The base HP of the class. Used in calculation of HP at each level"
           },
@@ -230,6 +230,10 @@
                 }
               }
             }
+          },
+          "startingEquipment": {
+            "type": "string",
+            "description": "The starting equipment a class may obtain"
           }
         }
       }

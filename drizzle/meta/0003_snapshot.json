@@ -1,0 +1,189 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "id": "ae3a5a04-3fcc-45b6-9a0f-136c74d8b14a",
+  "prevId": "9f966ca6-1511-4c45-8f04-0ed3ef9143d3",
+  "tables": {
+    "Class": {
+      "name": "Class",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "abil_bonus": {
+          "name": "abil_bonus",
+          "type": "ability[]",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "base_hp": {
+          "name": "base_hp",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "recovery_dice": {
+          "name": "recovery_dice",
+          "type": "Dice",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "starting_gold": {
+          "name": "starting_gold",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "no_armor": {
+          "name": "no_armor",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "light_armor": {
+          "name": "light_armor",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "heavy_armor": {
+          "name": "heavy_armor",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "shield": {
+          "name": "shield",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "basic_melee_attack": {
+          "name": "basic_melee_attack",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "basic_ranged_attack": {
+          "name": "basic_ranged_attack",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "starting_equipment": {
+          "name": "starting_equipment",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "''"
+        }
+      },
+      "indexes": {
+        "Class_name_key": {
+          "name": "Class_name_key",
+          "columns": [
+            "name"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {
+    "aal_level": {
+      "name": "aal_level",
+      "values": {
+        "aal1": "aal1",
+        "aal2": "aal2",
+        "aal3": "aal3"
+      }
+    },
+    "Ability": {
+      "name": "Ability",
+      "values": {
+        "Strength": "Strength",
+        "Dexterity": "Dexterity",
+        "Constitution": "Constitution",
+        "Intelligence": "Intelligence",
+        "Wisdom": "Wisdom",
+        "Charisma": "Charisma"
+      }
+    },
+    "code_challenge_method": {
+      "name": "code_challenge_method",
+      "values": {
+        "s256": "s256",
+        "plain": "plain"
+      }
+    },
+    "Dice": {
+      "name": "Dice",
+      "values": {
+        "d4": "d4",
+        "d6": "d6",
+        "d8": "d8",
+        "d10": "d10",
+        "d12": "d12",
+        "d20": "d20"
+      }
+    },
+    "factor_status": {
+      "name": "factor_status",
+      "values": {
+        "unverified": "unverified",
+        "verified": "verified"
+      }
+    },
+    "factor_type": {
+      "name": "factor_type",
+      "values": {
+        "totp": "totp",
+        "webauthn": "webauthn"
+      }
+    },
+    "key_status": {
+      "name": "key_status",
+      "values": {
+        "default": "default",
+        "valid": "valid",
+        "invalid": "invalid",
+        "expired": "expired"
+      }
+    },
+    "key_type": {
+      "name": "key_type",
+      "values": {
+        "aead-ietf": "aead-ietf",
+        "aead-det": "aead-det",
+        "hmacsha512": "hmacsha512",
+        "hmacsha256": "hmacsha256",
+        "auth": "auth",
+        "shorthash": "shorthash",
+        "generichash": "generichash",
+        "kdf": "kdf",
+        "secretbox": "secretbox",
+        "secretstream": "secretstream",
+        "stream_xchacha20": "stream_xchacha20"
+      }
+    }
+  },
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}

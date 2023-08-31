@@ -6,6 +6,7 @@ import {
   text,
   integer,
   jsonb,
+  PgArray,
 } from "drizzle-orm/pg-core";
 
 import { sql } from "drizzle-orm";
@@ -35,7 +36,7 @@ export const codeChallengeMethod = pgEnum("code_challenge_method", [
   "s256",
   "plain",
 ]);
-export const ability = pgEnum("Ability", [
+export const ability = pgEnum("ability", [
   "Strength",
   "Dexterity",
   "Constitution",
@@ -43,24 +44,29 @@ export const ability = pgEnum("Ability", [
   "Wisdom",
   "Charisma",
 ]);
+
 export const dice = pgEnum("Dice", ["d4", "d6", "d8", "d10", "d12", "d20"]);
 
 export const classes = pgTable(
-  "Class",
+  "classes",
   {
     id: serial("id").primaryKey().notNull(),
     name: text("name").notNull(),
     // TODO: failed to parse database type 'Ability"[]'
-    abilBonus: ability("abilBonus").array(),
-    baseHp: integer("baseHP").notNull(),
-    recoveryDice: dice("recoveryDice").notNull(),
-    startingGold: text("startingGold").notNull(),
-    noArmor: jsonb("noArmor").notNull(),
-    lightArmor: jsonb("lightArmor").notNull(),
-    heavyArmor: jsonb("heavyArmor").notNull(),
+    abilBonus: ability("abil_bonus")
+      .array()
+      .notNull()
+      .$type<(typeof ability)[]>(),
+    baseHp: integer("base_hp").notNull(),
+    recoveryDice: dice("recovery_dice").notNull(),
+    startingGold: text("starting_gold").notNull(),
+    noArmor: jsonb("no_armor").notNull(),
+    lightArmor: jsonb("light_armor").notNull(),
+    heavyArmor: jsonb("heavy_armor").notNull(),
     shield: jsonb("shield").notNull(),
-    basicMeleeAttack: jsonb("basicMeleeAttack").notNull(),
-    basicRangedAttack: jsonb("basicRangedAttack").notNull(),
+    basicMeleeAttack: jsonb("basic_melee_attack").notNull(),
+    basicRangedAttack: jsonb("basic_ranged_attack").notNull(),
+    startingEquipment: text("starting_equipment").notNull().default(""),
   },
   (table) => {
     return {

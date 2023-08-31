@@ -1,569 +1,583 @@
 {
-	"$schema": "./classes-schema.json",
+  "$schema": "./classes-schema.json",
 
-	"classes": [
-		{
-			"name": "Barbarian",
-			"abilBonus": ["Strength", "Constitution"],
-			"baseHP": 7,
-			"recoveryDice": "d10",
-			"startingGold": "Barbarians may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 12,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 13,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": 0
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength + Level vs AC",
-				"hit": "WEAPON + Strength damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Bard",
-			"abilBonus": ["Dexterity", "Charisma"],
-			"baseHP": 7,
-			"recoveryDice": "d8",
-			"startingGold": "Bards may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 12,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 13,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength OR Dexterity + Level vs AC",
-				"hit": "WEAPON + Strength OR Dexterity damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Chaos Mage",
-			"abilBonus": ["Intelligence", "Charisma"],
-			"baseHP": 6,
-			"recoveryDice": "d6",
-			"startingGold": "Chaos Mages may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 11,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength + Level vs AC",
-				"hit": "WEAPON + Strength damage",
-				"miss": "-"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Cleric",
-			"abilBonus": ["Wisdom", "Strength"],
-			"baseHP": 7,
-			"recoveryDice": "d8",
-			"startingGold": "Clerics may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 12,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 14,
-				"attackPenalty": 0
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": 0
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength + Level vs AC",
-				"hit": "WEAPON + Strength damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Commander",
-			"abilBonus": ["Strength", "Charisma"],
-			"baseHP": 7,
-			"recoveryDice": "d8",
-			"startingGold": "Commanders may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 12,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 14,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": 0
-			},
-			"basicMeleeAttack": {
-				"target": "-",
-				"attack": "-",
-				"hit": "-",
-				"miss": "-"
-			},
-			"basicRangedAttack": {
-				"target": "-",
-				"attack": "-",
-				"hit": "-",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Demonologist",
-			"abilBonus": ["Constitution", "Charisma"],
-			"baseHP": 6,
-			"recoveryDice": "d6",
-			"startingGold": "Demonologists may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 11,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 12,
-				"attackPenalty": -5
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength + Level vs AC",
-				"hit": "WEAPON + Strength damage",
-				"miss": "-"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Druid",
-			"abilBonus": ["Strength", "Dexterity", "Wisdom"],
-			"baseHP": 6,
-			"recoveryDice": "d6",
-			"startingGold": "Druids may start with either 25gp or 1d6 x 10",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 14,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength OR Dexterity + Level vs AC",
-				"hit": "WEAPON + Strength OR Dexterity damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Fighter",
-			"abilBonus": ["Strength", "Constitution"],
-			"baseHP": 8,
-			"recoveryDice": "d10",
-			"startingGold": "Fighters may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 13,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 15,
-				"attackPenalty": 0
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": 0
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength + Level vs AC",
-				"hit": "WEAPON + Strength damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Monk",
-			"abilBonus": ["Strength", "Dexterity", "Wisdom"],
-			"baseHP": 7,
-			"recoveryDice": "d8",
-			"startingGold": "Monks may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 11,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 11,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 12,
-				"attackPenalty": -4
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "PUNCH + Dexterity damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Necromancer",
-			"abilBonus": ["Intelligence", "Charisma"],
-			"baseHP": 6,
-			"recoveryDice": "d6",
-			"startingGold": "Necromancers may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 11,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength + Level vs AC",
-				"hit": "WEAPON + Strength damage",
-				"miss": "-"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Occultist",
-			"abilBonus": ["Intelligence", "Wisdom"],
-			"baseHP": 6,
-			"recoveryDice": "d6",
-			"startingGold": "Occultists may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 11,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 13,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength + Level vs AC",
-				"hit": "WEAPON + Strength damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Paladin",
-			"abilBonus": ["Strength", "Charisma"],
-			"baseHP": 8,
-			"recoveryDice": "d10",
-			"startingGold": "Paladins may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 12,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 16,
-				"attackPenalty": 0
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": 0
-			},
+  "classes": [
+    {
+      "name": "Barbarian",
+      "abilBonus": ["Strength", "Constitution"],
+      "baseHp": 7,
+      "recoveryDice": "d10",
+      "startingGold": "Barbarians may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 12,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 13,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": 0
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength + Level vs AC",
+        "hit": "WEAPON + Strength damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": ""
+    },
+    {
+      "name": "Bard",
+      "abilBonus": ["Dexterity", "Charisma"],
+      "baseHp": 7,
+      "recoveryDice": "d8",
+      "startingGold": "Bards may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 12,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 13,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength OR Dexterity + Level vs AC",
+        "hit": "WEAPON + Strength OR Dexterity damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": "At 1st level, bards start with non-magical musical instruments, a melee and ranged weapon of their choice, some form of light armor, and any other minor elements of gear their backgrounds suggest."
+    },
+    {
+      "name": "Chaos Mage",
+      "abilBonus": ["Intelligence", "Charisma"],
+      "baseHp": 6,
+      "recoveryDice": "d6",
+      "startingGold": "Chaos Mages may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 11,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength + Level vs AC",
+        "hit": "WEAPON + Strength damage",
+        "miss": "-"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": "At 1st level, chaos mages start with adventuring clothes, a simple dagger (or a uniquely weird but similarly powerful weapon befitting to their background), and any other minor (and unusual) elements of gear their backgrounds suggest."
+    },
+    {
+      "name": "Cleric",
+      "abilBonus": ["Wisdom", "Strength"],
+      "baseHp": 7,
+      "recoveryDice": "d8",
+      "startingGold": "Clerics may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 12,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 14,
+        "attackPenalty": 0
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": 0
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength + Level vs AC",
+        "hit": "WEAPON + Strength damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": "At 1st level, a cleric starts with a melee weapon, decent armor, a holy symbol, and other minor possessions suggested by their backgrounds. They might even have a crossbow."
+    },
+    {
+      "name": "Commander",
+      "abilBonus": ["Strength", "Charisma"],
+      "baseHp": 7,
+      "recoveryDice": "d8",
+      "startingGold": "Commanders may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 12,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 14,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": 0
+      },
+      "basicMeleeAttack": {
+        "target": "-",
+        "attack": "-",
+        "hit": "-",
+        "miss": "-"
+      },
+      "basicRangedAttack": {
+        "target": "-",
+        "attack": "-",
+        "hit": "-",
+        "miss": "-"
+      },
+      "startingEquipment": "At 1st level, commanders start with a melee weapon or two, a ranged weapon, a shield, light armor of some type (or heavy armor if they chose the Armor Skills talent), and other minor odds-and-ends suggested by their backgrounds."
+    },
+    {
+      "name": "Demonologist",
+      "abilBonus": ["Constitution", "Charisma"],
+      "baseHp": 6,
+      "recoveryDice": "d6",
+      "startingGold": "Demonologists may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 11,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 12,
+        "attackPenalty": -5
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength + Level vs AC",
+        "hit": "WEAPON + Strength damage",
+        "miss": "-"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      }
+    },
+    {
+      "name": "Druid",
+      "abilBonus": ["Strength", "Dexterity", "Wisdom"],
+      "baseHp": 6,
+      "recoveryDice": "d6",
+      "startingGold": "Druids may start with either 25gp or 1d6 x 10",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 14,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength OR Dexterity + Level vs AC",
+        "hit": "WEAPON + Strength OR Dexterity damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": ""
+    },
+    {
+      "name": "Fighter",
+      "abilBonus": ["Strength", "Constitution"],
+      "baseHp": 8,
+      "recoveryDice": "d10",
+      "startingGold": "Fighters may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 13,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 15,
+        "attackPenalty": 0
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": 0
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength + Level vs AC",
+        "hit": "WEAPON + Strength damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": "At 1st level, a fighter starts with a melee weapon or two, a ranged weapon if they want it, armor, and standard non-magical gear that is suggested by the character’s backgrounds."
+    },
+    {
+      "name": "Monk",
+      "abilBonus": ["Strength", "Dexterity", "Wisdom"],
+      "baseHp": 7,
+      "recoveryDice": "d8",
+      "startingGold": "Monks may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 11,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 11,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 12,
+        "attackPenalty": -4
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "PUNCH + Dexterity damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": "At 1st level, a monk may start with one or two weapons, a change of clothes, and perhaps a ranged weapon—or none of those."
+    },
+    {
+      "name": "Necromancer",
+      "abilBonus": ["Intelligence", "Charisma"],
+      "baseHp": 6,
+      "recoveryDice": "d6",
+      "startingGold": "Necromancers may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 11,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength + Level vs AC",
+        "hit": "WEAPON + Strength damage",
+        "miss": "-"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      }
+    },
+    {
+      "name": "Occultist",
+      "abilBonus": ["Intelligence", "Wisdom"],
+      "baseHp": 6,
+      "recoveryDice": "d6",
+      "startingGold": "Occultists may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 11,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 13,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength + Level vs AC",
+        "hit": "WEAPON + Strength damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": "At 1st level, a necromancer starts with various dark robes or traveling clothes, a dagger, a staff, a few treasured bones or funerary urns, and other miscellaneous items suggested by their backgrounds."
+    },
+    {
+      "name": "Paladin",
+      "abilBonus": ["Strength", "Charisma"],
+      "baseHp": 8,
+      "recoveryDice": "d10",
+      "startingGold": "Paladins may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 12,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 16,
+        "attackPenalty": 0
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": 0
+      },
 
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength + Level vs AC",
-				"hit": "WEAPON + Strength damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Ranger",
-			"abilBonus": ["Strength", "Dexterity"],
-			"baseHP": 7,
-			"recoveryDice": "d8",
-			"startingGold": "Rangers may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 14,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 15,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength + Level vs AC",
+        "hit": "WEAPON + Strength damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": "At 1st level, a paladin starts with a melee weapon or two, a ranged weapon if they want it, armor, a shield, and standard non-magical gear that is suggested by the character’s backgrounds."
+    },
+    {
+      "name": "Ranger",
+      "abilBonus": ["Strength", "Dexterity"],
+      "baseHp": 7,
+      "recoveryDice": "d8",
+      "startingGold": "Rangers may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 14,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 15,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
 
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength OR Dexterity + Level vs AC",
-				"hit": "WEAPON + Strength OR Dexterity damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "Damage equal to your Level"
-			}
-		},
-		{
-			"name": "Rogue",
-			"abilBonus": ["Dexterity", "Charisma"],
-			"baseHP": 6,
-			"recoveryDice": "d8",
-			"startingGold": "Rogues may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 11,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 12,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 13,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "Damage equal to your Level"
-			}
-		},
-		{
-			"name": "Sorcerer",
-			"abilBonus": ["Charisma", "Constitution"],
-			"baseHP": 6,
-			"recoveryDice": "d6",
-			"startingGold": "Sorcerers may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 11,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength OR Dexterity + Level vs AC",
+        "hit": "WEAPON + Strength OR Dexterity damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "Damage equal to your Level"
+      },
+      "startingEquipment": "At 1st level, a ranger starts with light armor, a melee weapon or two, a ranged weapon or two, and other mundane gear as suggested by their backgrounds."
+    },
+    {
+      "name": "Rogue",
+      "abilBonus": ["Dexterity", "Charisma"],
+      "baseHp": 6,
+      "recoveryDice": "d8",
+      "startingGold": "Rogues may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 11,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 12,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 13,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "Damage equal to your Level"
+      },
+      "startingEquipment": "At 1st level, rogues start with the clothes on their back and the dice in their pockets. They also start with various bladed weapons and some armor. Plus various oddments suggested by their backgrounds."
+    },
+    {
+      "name": "Sorcerer",
+      "abilBonus": ["Charisma", "Constitution"],
+      "baseHp": 6,
+      "recoveryDice": "d6",
+      "startingGold": "Sorcerers may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 11,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
 
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength + Level vs AC",
-				"hit": "WEAPON + Strength damage",
-				"miss": "Damage equal to your Level"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		},
-		{
-			"name": "Wizard",
-			"abilBonus": ["Intelligence", "Wisdom"],
-			"baseHP": 6,
-			"recoveryDice": "d6",
-			"startingGold": "Wizards may start with either 25gp or 1d6 x 10 gp",
-			"noArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"lightArmor": {
-				"baseAC": 10,
-				"attackPenalty": 0
-			},
-			"heavyArmor": {
-				"baseAC": 11,
-				"attackPenalty": -2
-			},
-			"shield": {
-				"baseAC": 1,
-				"attackPenalty": -2
-			},
-			"basicMeleeAttack": {
-				"target": "One enemy",
-				"attack": "Strength + Level vs AC",
-				"hit": "WEAPON + Strength damage",
-				"miss": "-"
-			},
-			"basicRangedAttack": {
-				"target": "One enemy",
-				"attack": "Dexterity + Level vs AC",
-				"hit": "WEAPON + Dexterity damage",
-				"miss": "-"
-			}
-		}
-	]
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength + Level vs AC",
+        "hit": "WEAPON + Strength damage",
+        "miss": "Damage equal to your Level"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": "At 1st level, a sorcerer usually has a simple melee weapon, a few changes of clothing, a wand or staff, and other paraphernalia suggested by their backgrounds."
+    },
+    {
+      "name": "Wizard",
+      "abilBonus": ["Intelligence", "Wisdom"],
+      "baseHp": 6,
+      "recoveryDice": "d6",
+      "startingGold": "Wizards may start with either 25gp or 1d6 x 10 gp",
+      "noArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "lightArmor": {
+        "baseAC": 10,
+        "attackPenalty": 0
+      },
+      "heavyArmor": {
+        "baseAC": 11,
+        "attackPenalty": -2
+      },
+      "shield": {
+        "baseAC": 1,
+        "attackPenalty": -2
+      },
+      "basicMeleeAttack": {
+        "target": "One enemy",
+        "attack": "Strength + Level vs AC",
+        "hit": "WEAPON + Strength damage",
+        "miss": "-"
+      },
+      "basicRangedAttack": {
+        "target": "One enemy",
+        "attack": "Dexterity + Level vs AC",
+        "hit": "WEAPON + Dexterity damage",
+        "miss": "-"
+      },
+      "startingEquipment": "At 1st level, a wizard usually has a dagger, a robe or two, a wand, ritual components in pouches, and other minor accouterments suggested by their backgrounds."
+    }
+  ]
 }

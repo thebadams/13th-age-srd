@@ -13,7 +13,8 @@
     "drizzle:introspect": "drizzle-kit introspect:pg",
     "drizzle:generate": "drizzle-kit generate:pg",
     "drizzle:push": "drizzle-kit push:pg",
-    "drizzle:seed": "node --loader ts-node/esm drizzle/seed.ts"
+    "drizzle:seed": "tsx drizzle/seed.ts",
+    "drizzle:migrate": "drizzle-kit migrate"
   },
   "keywords": [
     "13th",

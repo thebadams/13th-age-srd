@@ -1,5 +1,5 @@
 import { drizzleDB } from "../config/drizzle.js";
-import { classes } from "../schema.js";
+import { classes } from "../db/class.schema.js";
 
 export async function drizzleAllClasses() {
   try {
@@ -16,6 +16,7 @@ export async function drizzleAllClasses() {
         shield: classes.shield,
         basicMeleeAttack: classes.basicMeleeAttack,
         basicRangedAttack: classes.basicRangedAttack,
+        startingEquipment: classes.startingEquipment,
       })
       .from(classes);
     return {

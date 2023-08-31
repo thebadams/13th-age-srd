@@ -15,6 +15,27 @@
       "when": 1693428033733,
       "tag": "0001_parched_korg",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1693448425516,
+      "tag": "0002_stiff_mole_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1693448941291,
+      "tag": "0003_violet_shatterstar",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1693451613846,
+      "tag": "0004_abandoned_texas_twister",
+      "breakpoints": true
     }
   ]
 }
