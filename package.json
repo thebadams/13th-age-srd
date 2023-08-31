@@ -8,8 +8,8 @@
     "build": "swc ./src -d dist",
     "start": "node ./dist/index.js",
     "watch": "swc ./src -d dist -w",
-    "serve": "nodemon dist/index.js",
-    "dev": "pnpm watch & pnpm serve",
+    "serve": "tsx ./src/index.ts",
+    "dev": "tsx watch ./src/",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:seed": "prisma db seed",
@@ -36,6 +36,7 @@
     "eslint": "^8.48.0",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
+    "tsx": "^3.12.7",
     "typescript": "^5.2.2"
   },
   "dependencies": {
