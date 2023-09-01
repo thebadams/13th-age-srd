@@ -23,6 +23,21 @@ type Attack = {
 	hit: string;
 	miss: string;
 };
+
+type MeleeWeapons = {
+	small: {
+		weapons: string[];
+		attackPenalty: number;
+	};
+	lightOrSimple: {
+		weapons: string[];
+		attackPenalty: number;
+	};
+	heavyOrMartial: {
+		weapons: string[];
+		attackPenalty: number;
+	};
+};
 export const keyStatus = pgEnum('key_status', [
 	'default',
 	'valid',
@@ -80,6 +95,12 @@ export const classes = pgTable(
 		basicMeleeAttack: jsonb('basic_melee_attack').notNull().$type<Attack>(),
 		basicRangedAttack: jsonb('basic_ranged_attack').notNull().$type<Attack>(),
 		startingEquipment: text('starting_equipment').notNull().default(''),
+		oneHandedWeapons: jsonb('one_handed_weapons')
+			.notNull()
+			.$type<MeleeWeapons>(),
+		twoHandedWeapons: jsonb('two_handed_weapons')
+			.notNull()
+			.$type<MeleeWeapons>(),
 	},
 	(table) => {
 		return {

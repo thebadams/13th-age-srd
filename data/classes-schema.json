@@ -1,242 +1,266 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "type": "object",
-  "properties": {
-    "classes": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The name of the class."
-          },
-          "abilBonus": {
-            "type": "array",
-            "description": "The list of available ability bonuses for the class.",
-            "items": {
-              "type": "string",
-              "enum": [
-                "Strength",
-                "Dexterity",
-                "Constitution",
-                "Intelligence",
-                "Wisdom",
-                "Charisma"
-              ]
-            }
-          },
-          "baseHp": {
-            "type": "number",
-            "description": "The base HP of the class. Used in calculation of HP at each level"
-          },
-          "recoveryDice": {
-            "type": "string",
-            "description": "The die that is rolled for recovery"
-          },
-          "startingGold": {
-            "type": "string",
-            "description": "The amount of gold that the class starts with"
-          },
-          "noArmor": {
-            "type": "object",
-            "description": "The AC configuration for a member of the class while wearing no armor",
-            "properties": {
-              "baseAC": {
-                "type": "number",
-                "description": "The base AC value for when the character has no armor"
-              },
-              "attackPenalty": {
-                "type": "number",
-                "description": "The attack penalty value for when the character has no armor"
-              }
-            }
-          },
-          "lightArmor": {
-            "type": "object",
-            "description": "The AC configuration for a member of the class while wearing a light armor",
-            "properties": {
-              "baseAC": {
-                "type": "number",
-                "description": "The base AC value for when the character has a light armor"
-              },
-              "attackPenalty": {
-                "type": "number",
-                "description": "The attack penalty value for when the character has a light armor"
-              }
-            }
-          },
-          "heavyArmor": {
-            "type": "object",
-            "description": "The AC configuration for a member of the class while wearing a heavy armor",
-            "properties": {
-              "baseAC": {
-                "type": "number",
-                "description": "The base AC value for when the character has  heavy armor"
-              },
-              "attackPenalty": {
-                "type": "number",
-                "description": "The attack penalty value for when the character has  heavy armor"
-              }
-            }
-          },
-          "shield": {
-            "type": "object",
-            "description": "The AC configuration for a member of the class while using a shield",
-            "$comment": "There are only two configurations available: one with penalty and one without. A shield always grants a +1 bonus",
-            "properties": {
-              "baseAC": {
-                "type": "number",
-                "description": "The AC value granted by use of a shield. This is always 1",
-                "enum": [1]
-              },
-              "attackPenalty": {
-                "type": "number",
-                "description": "The attack penalty value for a character that is using a shield."
-              }
-            }
-          },
-          "basicMeleeAttack": {
-            "type": "object",
-            "description": "The attack configuration for a class's basic melee attacks",
-            "properties": {
-              "target": {
-                "type": "string"
-              },
-              "attack": {
-                "type": "string"
-              },
-              "hit": {
-                "type": "string"
-              },
-              "miss": {
-                "type": "string"
-              }
-            }
-          },
-          "basicRangedAttack": {
-            "type": "object",
-            "description": "The attack configuration for a class's basic ranged attacks",
-            "properties": {
-              "target": {
-                "type": "string"
-              },
-              "attack": {
-                "type": "string"
-              },
-              "hit": {
-                "type": "string"
-              },
-              "miss": {
-                "type": "string"
-              }
-            }
-          },
-          "oneHandedWeapons": {
-            "type": "object",
-            "description": "The one-handed weapons a class may use",
-            "properties": {
-              "small": {
-                "type": "object",
-                "description": "The small weapons a class may use",
-                "properties": {
-                  "weapons": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "attackPenalty": {
-                    "type": "number"
-                  }
-                }
-              },
-              "lightOrSimple": {
-                "type": "object",
-                "description": "The light or simple weapons a class may use",
-                "properties": {
-                  "weapons": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "attackPenalty": {
-                    "type": "number"
-                  }
-                }
-              },
-              "heavyOrMartial": {
-                "type": "object",
-                "description": "The heavy or martial weapons a class may use",
-                "properties": {
-                  "weapons": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "attackPenalty": {
-                    "type": "number"
-                  }
-                }
-              }
-            }
-          },
-          "twoHandedWeapons": {
-            "type": "object",
-            "description": "The two-handed weapons a class may use",
-            "properties": {
-              "small": {
-                "type": "object",
-                "properties": {
-                  "weapons": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "attackPenalty": {
-                    "type": "number"
-                  }
-                }
-              },
-              "lightOrSimple": {
-                "type": "object",
-                "properties": {
-                  "weapons": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "attackPenalty": {
-                    "type": "number"
-                  }
-                }
-              },
-              "heavyOrMartial": {
-                "type": "object",
-                "properties": {
-                  "weapons": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "attackPenalty": {
-                    "type": "number"
-                  }
-                }
-              }
-            }
-          },
-          "startingEquipment": {
-            "type": "string",
-            "description": "The starting equipment a class may obtain"
-          }
-        }
-      }
-    }
-  }
+	"$schema": "http://json-schema.org/schema",
+	"type": "object",
+	"properties": {
+		"classes": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "The name of the class."
+					},
+					"abilBonus": {
+						"type": "array",
+						"description": "The list of available ability bonuses for the class.",
+						"items": {
+							"type": "string",
+							"enum": [
+								"Strength",
+								"Dexterity",
+								"Constitution",
+								"Intelligence",
+								"Wisdom",
+								"Charisma"
+							]
+						}
+					},
+					"baseHp": {
+						"type": "number",
+						"description": "The base HP of the class. Used in calculation of HP at each level"
+					},
+					"recoveryDice": {
+						"type": "string",
+						"description": "The die that is rolled for recovery"
+					},
+					"startingGold": {
+						"type": "string",
+						"description": "The amount of gold that the class starts with"
+					},
+					"noArmor": {
+						"type": "object",
+						"description": "The AC configuration for a member of the class while wearing no armor",
+						"properties": {
+							"baseAC": {
+								"type": "number",
+								"description": "The base AC value for when the character has no armor"
+							},
+							"attackPenalty": {
+								"type": "number",
+								"description": "The attack penalty value for when the character has no armor"
+							}
+						}
+					},
+					"lightArmor": {
+						"type": "object",
+						"description": "The AC configuration for a member of the class while wearing a light armor",
+						"properties": {
+							"baseAC": {
+								"type": "number",
+								"description": "The base AC value for when the character has a light armor"
+							},
+							"attackPenalty": {
+								"type": "number",
+								"description": "The attack penalty value for when the character has a light armor"
+							}
+						}
+					},
+					"heavyArmor": {
+						"type": "object",
+						"description": "The AC configuration for a member of the class while wearing a heavy armor",
+						"properties": {
+							"baseAC": {
+								"type": "number",
+								"description": "The base AC value for when the character has  heavy armor"
+							},
+							"attackPenalty": {
+								"type": "number",
+								"description": "The attack penalty value for when the character has  heavy armor"
+							}
+						}
+					},
+					"shield": {
+						"type": "object",
+						"description": "The AC configuration for a member of the class while using a shield",
+						"$comment": "There are only two configurations available: one with penalty and one without. A shield always grants a +1 bonus",
+						"properties": {
+							"baseAC": {
+								"type": "number",
+								"description": "The AC value granted by use of a shield. This is always 1",
+								"enum": [1]
+							},
+							"attackPenalty": {
+								"type": "number",
+								"description": "The attack penalty value for a character that is using a shield."
+							}
+						}
+					},
+					"basicMeleeAttack": {
+						"type": "object",
+						"description": "The attack configuration for a class's basic melee attacks",
+						"properties": {
+							"target": {
+								"type": "string"
+							},
+							"attack": {
+								"type": "string"
+							},
+							"hit": {
+								"type": "string"
+							},
+							"miss": {
+								"type": "string"
+							}
+						}
+					},
+					"basicRangedAttack": {
+						"type": "object",
+						"description": "The attack configuration for a class's basic ranged attacks",
+						"properties": {
+							"target": {
+								"type": "string"
+							},
+							"attack": {
+								"type": "string"
+							},
+							"hit": {
+								"type": "string"
+							},
+							"miss": {
+								"type": "string"
+							}
+						}
+					},
+					"oneHandedWeapons": {
+						"type": "object",
+						"description": "The one-handed weapons a class may use",
+						"properties": {
+							"small": {
+								"type": "object",
+								"description": "The small weapons a class may use",
+								"properties": {
+									"weapons": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"attackPenalty": {
+										"type": "number"
+									},
+									"die": {
+										"type": "string",
+										"enum": ["d4", "d6", "d8", "d10"]
+									}
+								}
+							},
+							"lightOrSimple": {
+								"type": "object",
+								"description": "The light or simple weapons a class may use",
+								"properties": {
+									"weapons": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"attackPenalty": {
+										"type": "number"
+									},
+									"die": {
+										"type": "string",
+										"enum": ["d4", "d6", "d8", "d10"]
+									}
+								}
+							},
+							"heavyOrMartial": {
+								"type": "object",
+								"description": "The heavy or martial weapons a class may use",
+								"properties": {
+									"weapons": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"attackPenalty": {
+										"type": "number"
+									},
+									"die": {
+										"type": "string",
+										"enum": ["d4", "d6", "d8", "d10"]
+									}
+								}
+							}
+						}
+					},
+					"twoHandedWeapons": {
+						"type": "object",
+						"description": "The two-handed weapons a class may use",
+						"properties": {
+							"small": {
+								"type": "object",
+								"properties": {
+									"weapons": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"attackPenalty": {
+										"type": "number"
+									},
+									"die": {
+										"type": "string",
+										"enum": ["d4", "d6", "d8", "d10"]
+									}
+								}
+							},
+							"lightOrSimple": {
+								"type": "object",
+								"properties": {
+									"weapons": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"attackPenalty": {
+										"type": "number"
+									},
+									"die": {
+										"type": "string",
+										"enum": ["d4", "d6", "d8", "d10"]
+									}
+								}
+							},
+							"heavyOrMartial": {
+								"type": "object",
+								"properties": {
+									"weapons": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"attackPenalty": {
+										"type": "number"
+									},
+									"die": {
+										"type": "string",
+										"enum": ["d4", "d6", "d8", "d10"]
+									}
+								}
+							}
+						}
+					},
+					"startingEquipment": {
+						"type": "string",
+						"description": "The starting equipment a class may obtain"
+					}
+				}
+			}
+		}
+	}
 }
